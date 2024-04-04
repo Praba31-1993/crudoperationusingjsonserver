@@ -10,6 +10,7 @@ import ProductList from "./pages/ProductList";
 import Sidebar from "./components/Sidebar";
 
 function App() {
+
   return (
     <BrowserRouter>
       <Sidebar>
