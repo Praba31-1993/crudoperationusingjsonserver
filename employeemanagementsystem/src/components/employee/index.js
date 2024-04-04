@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import EmployeeList from './lister';
 import Navbar from "../../commonpages/Navbar"
 import '../employee/employee.css'
+import ModalPopup from '../../commonpages/ModalPopup';
 function Employees() {
     const [employees, setEmployees] = useState([])
     const apiUrl = process.env.REACT_APP_API_URL;
@@ -24,8 +25,12 @@ function Employees() {
     return (
         <div>
             <Navbar title={"Employee List"} />
-            <button  type="button" className="btn btn-primary newEmployeeButton" onClick={()=>navigate('/employee/create')}>Add New Employee</button>
+
+            <button  type="button" className="btn btn-primary newEmployeeButton" data-toggle="modal" data-target="#exampleModalCenter" >Add New Employee</button>
+
             <EmployeeList employees={employees} />
+
+            <ModalPopup/>
         </div>
     );
 }
