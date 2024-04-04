@@ -1,22 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-function Employees() {
-    const [employees, setEmployees] = useState([])
-    const apiUrl = process.env.REACT_APP_API_URL;
-
-    useEffect(() => {
-        getUsersList()
-    }, [])
-
-    const getUsersList = async () => {
-        await axios.get(`${apiUrl}/users`).then((res) => {
-            console.log('res', res);
-            setEmployees(res.data)
-        }).catch((error) => {
-            console.log('err', error);
-        })
-
-    }
+import Navbar from '../../../commonComponents/Navbar';
+function EmployeeList({employees}) {
     return (
         <div>
             <table class="table table-bordered">
@@ -44,4 +29,4 @@ function Employees() {
     );
 }
 
-export default Employees;
+export default EmployeeList;
