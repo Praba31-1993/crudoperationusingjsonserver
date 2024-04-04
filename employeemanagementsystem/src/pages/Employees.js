@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-function Dashboard() {
+function Employees() {
     const [employees, setEmployees] = useState([])
     const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -44,4 +44,4 @@ function Dashboard() {
     );
 }
 
-export default Dashboard;
+export default Employees;
