@@ -1,9 +1,9 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
 import Dashboard from "./components/dashboard";
 import Employees from "./components/employee";
+import Sidebar from "./commonpages/Sidebar";
+import CreateEmployee from "./components/employee/creator";
 
 function App() {
 
@@ -13,6 +13,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard/>} />
           <Route path="/employee" element={<Employees/>} />
+          <Route path="/employee/create" element={<CreateEmployee/>} />
+
         </Routes>
       </Sidebar>
     </BrowserRouter>

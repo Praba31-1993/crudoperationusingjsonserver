@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Navbar from '../../../commonComponents/Navbar';
 function EmployeeList({employees}) {
     return (
         <div>
