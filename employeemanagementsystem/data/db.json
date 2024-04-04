@@ -1,28 +1,172 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "name": "Juliet Oma",
-        "email": "julie@yahoo.com",
-        "number": "08100000000"
-      },
-      {
-        "id": 2,
-        "name": "James Williams",
-        "email": "jameswilly@gmail.com",
-        "number": "08111111111"
-      },
-      {
-        "id": 3,
-        "name": "Ahmed Ali",
-        "email": "ahmedali012@gmail.com",
-        "number": "09022222222"
-      },
-      {
-        "id": 4,
-        "name": "Grace Funsho",
-        "email": "gracefunsho@gmail.com",
-        "number": "09033333333"
-      }
-    ]
-  }
+  "users": [
+    {
+      "id": "5c7e0656-a60e-474b-ae8e-0f35372bfbd0",
+      "name": "Prabakaran",
+      "email": "prabaidymoto@gmail.com",
+      "employeeId": "5c7e0656-a60e-474b-ae8e-0f35372bfbd0",
+      "jobRole": "Specialist",
+      "mobile": "7845692527"
+    },
+    {
+      "id": "Emp10221",
+      "name": "Pradhap",
+      "email": "pradhap@gmail.com",
+      "employeeId": "Emp10221",
+      "jobRole": "Analyst",
+      "mobile": "7485623233"
+    },
+    {
+      "id": "Emp10222",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "employeeId": "Emp10222",
+      "jobRole": "Manager",
+      "mobile": "1234567890"
+    },
+    {
+      "id": "Emp10223",
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "employeeId": "Emp10223",
+      "jobRole": "Engineer",
+      "mobile": "9876543210"
+    },
+    {
+      "id": "Emp10224",
+      "name": "Michael Johnson",
+      "email": "michael.johnson@example.com",
+      "employeeId": "Emp10224",
+      "jobRole": "Developer",
+      "mobile": "5556667777"
+    },
+    {
+      "id": "Emp10225",
+      "name": "Emily Wilson",
+      "email": "emily.wilson@example.com",
+      "employeeId": "Emp10225",
+      "jobRole": "Designer",
+      "mobile": "3334445555"
+    },
+    {
+      "id": "Emp10226",
+      "name": "David Brown",
+      "email": "david.brown@example.com",
+      "employeeId": "Emp10226",
+      "jobRole": "Architect",
+      "mobile": "7778889999"
+    },
+    {
+      "id": "Emp10227",
+      "name": "Sarah Davis",
+      "email": "sarah.davis@example.com",
+      "employeeId": "Emp10227",
+      "jobRole": "Consultant",
+      "mobile": "1112223333"
+    },
+    {
+      "id": "Emp10228",
+      "name": "Christopher Miller",
+      "email": "christopher.miller@example.com",
+      "employeeId": "Emp10228",
+      "jobRole": "Administrator",
+      "mobile": "9990001111"
+    },
+    {
+      "id": "Emp10229",
+      "name": "Jessica Martinez",
+      "email": "jessica.martinez@example.com",
+      "employeeId": "Emp10229",
+      "jobRole": "Coordinator",
+      "mobile": "2223334444"
+    },
+    {
+      "id": "Emp10230",
+      "name": "William Taylor",
+      "email": "william.taylor@example.com",
+      "employeeId": "Emp10230",
+      "jobRole": "Assistant",
+      "mobile": "6667778888"
+    },
+    {
+      "id": "Emp10231",
+      "name": "Amanda Anderson",
+      "email": "amanda.anderson@example.com",
+      "employeeId": "Emp10231",
+      "jobRole": "Supervisor",
+      "mobile": "8889990000"
+    },
+    {
+      "id": "Emp10232",
+      "name": "Matthew Thompson",
+      "email": "matthew.thompson@example.com",
+      "employeeId": "Emp10232",
+      "jobRole": "Technician",
+      "mobile": "4445556666"
+    },
+    {
+      "id": "Emp10233",
+      "name": "Olivia White",
+      "email": "olivia.white@example.com",
+      "employeeId": "Emp10233",
+      "jobRole": "Specialist",
+      "mobile": "2223334444"
+    },
+    {
+      "id": "Emp10234",
+      "name": "Daniel Garcia",
+      "email": "daniel.garcia@example.com",
+      "employeeId": "Emp10234",
+      "jobRole": "Analyst",
+      "mobile": "9998887777"
+    },
+    {
+      "id": "Emp10235",
+      "name": "Sophia Martinez",
+      "email": "sophia.martinez@example.com",
+      "employeeId": "Emp10235",
+      "jobRole": "Manager",
+      "mobile": "1112223333"
+    },
+    {
+      "id": "Emp10236",
+      "name": "James Rodriguez",
+      "email": "james.rodriguez@example.com",
+      "employeeId": "Emp10236",
+      "jobRole": "Engineer",
+      "mobile": "8889990000"
+    },
+    {
+      "id": "Emp10237",
+      "name": "Isabella Lopez",
+      "email": "isabella.lopez@example.com",
+      "employeeId": "Emp10237",
+      "jobRole": "Developer",
+      "mobile": "7845692542"
+    },
+    {
+      "id": "Emp10238",
+      "name": "Alexander Hernandez",
+      "email": "alexander.hernandez@example.com",
+      "employeeId": "Emp10238",
+      "jobRole": "Designer",
+      "mobile": "2223334444"
+    },
+    {
+      "id": "Emp10239",
+      "name": "Sophia Martinez",
+      "email": "sophia.martinez@example.com",
+      "employeeId": "Emp10239",
+      "jobRole": "Architect",
+      "mobile": "9998887777"
+    },
+    {
+      "id": "ID294814",
+      "name": "YOGESH",
+      "email": "baagubali@gmail.com",
+      "employeeId": "ID294814",
+      "jobRole": "Manager",
+      "mobile": "7708465800"
+    }
+  ]
+}
