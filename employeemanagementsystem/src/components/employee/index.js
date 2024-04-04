@@ -12,6 +12,7 @@ import Modal from 'react-bootstrap/Modal';
 import { toastMessages } from '../../commonpages/Messgaes';
 import { OpenInNew } from '@mui/icons-material';
 import Pagination from '../../commonpages/Pagination';
+import AddIcon from '@mui/icons-material/Add';
 
 function Employees() {
     const [employees, setEmployees] = useState([])
@@ -144,7 +145,7 @@ function Employees() {
         <div >
             <ToastContainer />
             <Navbar title={"Employee List"} />
-            <button type="button" className="btn btn-primary newEmployeeButton" data-toggle="modal" data-target="#exampleModalCenter" onClick={() => { handleShow(); setIsCreate(true); setOpenViewModal(false) }}>Add New Employee</button>
+            <button type="button" className="btn btn-primary newEmployeeButton" data-toggle="modal" data-target="#exampleModalCenter" onClick={() => { handleShow(); setIsCreate(true); setOpenViewModal(false) }}><AddIcon/> Add New </button>
 
 
             <EmployeeList employees={currentEmployees} OpenViewPopup={(id) => OpenViewPopup(id)} OpenEditPopup={(id) => OpenEditPopup(id)} handleDelete={(id) => handleDelete(id)} />

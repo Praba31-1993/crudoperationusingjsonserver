@@ -4,6 +4,7 @@ import { roles } from './DummyDatas';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
+import CloseIcon from '@mui/icons-material/Close';
 import { validationMessages } from './Messgaes';
 import { v4 as uuidv4 } from 'uuid';
 import { nameRegex } from './Regex';
@@ -88,9 +89,10 @@ function ModalPopup({ create, handleCreate, needToUpdate, handleEdit, open, clos
                 backdrop="static"
                 keyboard={false}
             >
-                <Modal.Header closeButton>
+                <Modal.Header >
                     {view ? <Modal.Title>View Form</Modal.Title> :
                         <Modal.Title>{create ? "Create Form" : "Update Form"}</Modal.Title>}
+                        <CloseIcon onClick={close} style={{cursor:'pointer', color:'red'}}/>
                 </Modal.Header>
                 <Modal.Body>
                     <form>

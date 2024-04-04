@@ -8,12 +8,12 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Sidebar>
+      {/* <Sidebar> */}
         <Routes>
-          <Route path="/" element={<Dashboard/>} />
-          <Route path="/employee" element={<Employees/>} />
+          {/* <Route path="/" element={<Dashboard/>} /> */}
+          <Route path="/" element={<Employees/>} />
         </Routes>
-      </Sidebar>
+      {/* </Sidebar> */}
     </BrowserRouter>
   );
 }
