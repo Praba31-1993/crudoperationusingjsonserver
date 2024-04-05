@@ -5,7 +5,6 @@ import Modal from 'react-bootstrap/Modal';
 import CloseIcon from '@mui/icons-material/Close';
 
 function ConfirrmationPopup({ handleDelete, open, close }) {
-
     return (
         <>
             <Modal

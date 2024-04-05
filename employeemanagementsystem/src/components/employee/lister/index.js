@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import ConfirrmationPopup from '../../../commonpages/ConfirrmationPopup';
+import React, { useState } from 'react';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -8,17 +7,21 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { ListItemIcon, ListItemText } from '@mui/material';
+import ConfirrmationPopup from '../../../commonpages/ConfirrmationPopup';
+
 function EmployeeList({ employees, OpenEditPopup, handleDelete, OpenViewPopup }) {
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [anchorEl, setAnchorEl] = useState(null);
+    const [employeeId, setEmployeeId] = useState()
+    const [show, setShow] = useState(false);
     const open = Boolean(anchorEl);
+
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
     const handleClosePopup = () => {
         setAnchorEl(null);
     };
-    const [employeeId, setEmployeeId] = useState()
-    const [show, setShow] = useState(false);
+
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
@@ -29,6 +32,7 @@ function EmployeeList({ employees, OpenEditPopup, handleDelete, OpenViewPopup })
                 <thead>
                     <tr className='tableRow'>
                         <th scope="col">SNO</th>
+                        <th scope="col">Employee ID</th>
                         <th scope="col">Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">Mobile Number</th>
@@ -40,21 +44,13 @@ function EmployeeList({ employees, OpenEditPopup, handleDelete, OpenViewPopup })
                     {employees?.map((employee, index) => (
                         <tr className='tableRow'>
                             <td >{index + 1}</td>
+                            <td >{employee?.id}</td>
                             <td >{employee?.name}</td>
                             <td >{employee?.email}</td>
                             <td >{employee?.mobile}</td>
                             <td >{employee?.jobRole}</td>
-                            <td style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1em', width: 'auto' }}>
-                                {/* <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onClick={() => { OpenViewPopup(employee?.id); }}>
-                                    <VisibilityIcon />
-                                </button>
-                                <button type="button" className="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter" onClick={() => OpenEditPopup(employee?.id)}>
-                                    <EditIcon />
-                                </button>
-
-                                <button type="button" className="btn btn-danger "
-                                    onClick={() => { setEmployeeId(employee?.id); handleShow() }}
-                                ><DeleteIcon /></button> */}
+                            <td style={{ display: 'flex', justifyContent: 'space-between',
+                             flexWrap: 'wrap', gap: '1em', width: 'auto' }}>
                                 <Button
                                     id="demo-positioned-button"
                                     aria-controls={open ? 'demo-positioned-menu' : undefined}
@@ -79,7 +75,9 @@ function EmployeeList({ employees, OpenEditPopup, handleDelete, OpenViewPopup })
                                         horizontal: 'left',
                                     }}
                                 >
-                                    <MenuItem onClick={()=>{OpenViewPopup(employee?.id);handleClosePopup()}}>
+                                    <MenuItem onClick={() => { 
+                                        console.log('idddsd', employee?.id);
+                                        OpenViewPopup(employee?.id); handleClosePopup() }}>
                                         <ListItemIcon>
                                             <VisibilityIcon fontSize="small" />
                                         </ListItemIcon>
@@ -87,7 +85,7 @@ function EmployeeList({ employees, OpenEditPopup, handleDelete, OpenViewPopup })
                                             View
                                         </ListItemText>
                                     </MenuItem>
-                                    <MenuItem onClick={()=>{OpenEditPopup(employee?.id);handleClosePopup()}}>
+                                    <MenuItem onClick={() => { OpenEditPopup(employee?.id); handleClosePopup() }}>
                                         <ListItemIcon>
                                             <EditIcon fontSize="small" />
                                         </ListItemIcon>
@@ -96,25 +94,21 @@ function EmployeeList({ employees, OpenEditPopup, handleDelete, OpenViewPopup })
                                         </ListItemText>
                                     </MenuItem>
                                     <MenuItem onClick={() => { setEmployeeId(employee?.id); handleShow(); handleClosePopup() }}>
-
                                         <ListItemIcon>
                                             <DeleteIcon fontSize="small" />
                                         </ListItemIcon>
                                         <ListItemText>
                                             Delete
                                         </ListItemText>
-
                                     </MenuItem>
                                 </Menu>
 
                             </td>
                         </tr>
                     ))}
-
                 </tbody>
             </table>
         </div>
     );
 }
-
 export default EmployeeList;

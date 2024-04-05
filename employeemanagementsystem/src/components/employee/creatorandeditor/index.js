@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { roles } from './DummyDatas';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import axios from 'axios';
 import CloseIcon from '@mui/icons-material/Close';
-import { validationMessages } from './Messgaes';
-import { v4 as uuidv4 } from 'uuid';
-import { nameRegex } from './Regex';
-import { emailRegex } from './Regex';
-import { mobileRegex } from './Regex';
-import { employeeIdRegex } from './Regex';
-function ModalPopup({ create, handleCreate, needToUpdate, handleEdit, open, close, view }) {
+import { roles } from '../../../commonpages/DummyDatas';
+import { validationMessages } from '../../../commonpages/Messgaes';
+import { nameRegex } from '../../../commonpages/Regex';
+import { emailRegex } from '../../../commonpages/Regex';
+import { mobileRegex } from '../../../commonpages/Regex';
+import { employeeIdRegex } from '../../../commonpages/Regex';
+
+function CreateEditEmployees({ create, handleCreate, needToUpdate, handleEdit, open, close, view }) {
     const [name, setName] = useState('')
     const [nameErrorText, setNameErrorText] = useState('')
     const [email, setEmail] = useState('')
@@ -22,13 +20,6 @@ function ModalPopup({ create, handleCreate, needToUpdate, handleEdit, open, clos
     const [jobRoleErrorText, setJobRoleErrorText] = useState('')
     const [mobile, setMobile] = useState('')
     const [mobileErrorText, setMobileErrorText] = useState('')
-    const newId = uuidv4();
-
-    console.log('view', view);
-    useEffect(() => {
-        setEmployeeId(newId)
-    }, [create])
-    console.log("needToUpdate?.name", needToUpdate?.name);
 
     useEffect(() => {
         if (create) {
@@ -51,13 +42,14 @@ function ModalPopup({ create, handleCreate, needToUpdate, handleEdit, open, clos
         if (!employeeId) {
             setEmployeeIdErrorText(validationMessages.employeeId_required)
         }
-        if (nameRegex.test(name)) {
+
+        if (name && !nameRegex.test(name)) {
             setNameErrorText(validationMessages.name)
         }
-        if (emailRegex.test(email)) {
+        if (email && !emailRegex.test(email)) {
             setEmailErrorText(validationMessages.email)
         }
-        if (mobileRegex.test(mobile)) {
+        if (mobile && !mobileRegex.test(mobile)) {
             setMobileErrorText(validationMessages.mobileNumber)
         }
         if (!jobRole) {
@@ -154,15 +146,17 @@ function ModalPopup({ create, handleCreate, needToUpdate, handleEdit, open, clos
                         <div class="form-group">
                             <label for="formGroupExampleInput4">Mobile Number</label>
                             {view ?
-                                <input type="number" class="form-control" id="formGroupExampleInput4" placeholder="Enter your Mobile Number" value={mobile} />
+                                <input type="tel" class="form-control" id="formGroupExampleInput4" placeholder="Enter your Mobile Number" value={mobile} />
                                 :
-                                <input type="number" class="form-control" id="formGroupExampleInput4" placeholder="Enter your Mobile Number" value={mobile} onChange={(e) => {
+                                <input type="tel" class="form-control" id="formGroupExampleInput4" placeholder="Enter your Mobile Number" maxLength={10} value={mobile} onChange={(e) => {
                                     if (!mobileRegex.test(e.target.value)) {
                                         setMobile(null)
                                         setMobileErrorText(validationMessages.mobileNumber)
                                     }
                                     else {
-                                        setMobile(e.target.value)
+                                        
+                                            setMobile(e.target.value)
+                                        
                                         setMobileErrorText('')
                                     }
                                 }
@@ -203,8 +197,6 @@ function ModalPopup({ create, handleCreate, needToUpdate, handleEdit, open, clos
                             </>
 
                         }
-
-
                     </form>
                 </Modal.Body>
                 <Modal.Footer>
@@ -216,7 +208,7 @@ function ModalPopup({ create, handleCreate, needToUpdate, handleEdit, open, clos
                         </>
                         :
                         <>
-                            <Button variant="outlined" onClick={close}>
+                            <Button variant="outline-primary" onClick={close}>
                                 Cancel
                             </Button>
                             <Button variant="primary" onClick={(e) => handleSubmit(e)}>
@@ -230,4 +222,4 @@ function ModalPopup({ create, handleCreate, needToUpdate, handleEdit, open, clos
     );
 }
 
-export default ModalPopup;
+export default CreateEditEmployees;
