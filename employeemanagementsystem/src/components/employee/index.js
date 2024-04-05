@@ -31,10 +31,7 @@ function Employees() {
 
     // Create New Employee Api call
     const handleCreate = async (employeesDetails) => {
-        console.log("employeesDetailscreate", employeesDetails);
         await axios.post(`${apiUrl}/users`, employeesDetails).then((res) => {
-            console.log('createdata,', res.data);
-
             if (employees.some(employee => employee.id === res.data.id)) {
                 toast.warning(toastMessages.employeeIdAlreadyExist, {
                     position: "top-right",
@@ -57,9 +54,7 @@ function Employees() {
 
     // Edit Popup Screen 
     const OpenEditPopup = (id) => {
-        console.log("edditid", id);
         const editData = employees.filter((list) => list.id === id);
-        console.log('editData', editData);
         setNeedToUpdate(editData[0])
         setIsCreate(false)
         setOpenViewModal(false)
@@ -68,7 +63,6 @@ function Employees() {
 
     // View Popup Screen
     const OpenViewPopup = (id) => {
-        console.log("Vkiewid", id);
         const editData = employees.filter((list) => list.id === id);
         setNeedToUpdate(editData[0])
         setIsCreate(false)
@@ -101,7 +95,6 @@ function Employees() {
     // Delete Employee api call
     const handleDelete = async (id) => {
         await axios.delete(`${apiUrl}/users/${id}`).then((res) => {
-            console.log('resCreate', res);
             if (res.status === 200) {
                 toast.success(toastMessages.deletedSuccessfully, {
                     position: "top-right",
@@ -117,7 +110,6 @@ function Employees() {
         await axios.get(`${apiUrl}/users`).then((res) => {
             setEmployees(res.data)
         }).catch((error) => {
-            console.log('err', error);
         })
     }
     return (

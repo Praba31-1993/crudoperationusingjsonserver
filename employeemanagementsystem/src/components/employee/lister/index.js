@@ -76,7 +76,6 @@ function EmployeeList({ employees, OpenEditPopup, handleDelete, OpenViewPopup })
                                     }}
                                 >
                                     <MenuItem onClick={() => { 
-                                        console.log('idddsd', employee?.id);
                                         OpenViewPopup(employee?.id); handleClosePopup() }}>
                                         <ListItemIcon>
                                             <VisibilityIcon fontSize="small" />
