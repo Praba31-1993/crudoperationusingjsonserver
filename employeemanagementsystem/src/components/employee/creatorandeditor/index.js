@@ -84,7 +84,7 @@ function CreateEditEmployees({ create, handleCreate, needToUpdate, handleEdit, o
                 <Modal.Header >
                     {view ? <Modal.Title>View Form</Modal.Title> :
                         <Modal.Title>{create ? "Create Form" : "Update Form"}</Modal.Title>}
-                        <CloseIcon onClick={close} style={{cursor:'pointer', color:'red'}}/>
+                    <CloseIcon onClick={close} style={{ cursor: 'pointer', color: 'red' }} />
                 </Modal.Header>
                 <Modal.Body>
                     <form>
@@ -93,7 +93,7 @@ function CreateEditEmployees({ create, handleCreate, needToUpdate, handleEdit, o
                             {view ?
                                 <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter your Employee ID" value={employeeId} />
                                 :
-                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter your Employee ID" value={employeeId} onChange={(e) => {
+                                <input type="text" class="form-control" id="formGroupExampleInput2" disabled={!create ? true : false} placeholder="Enter your Employee ID" value={employeeId} onChange={(e) => {
                                     if (!employeeIdRegex.test(e.target.value)) {
                                         setEmployeeId(null);
                                         setEmployeeIdErrorText(validationMessages.employeeId)
@@ -154,9 +154,9 @@ function CreateEditEmployees({ create, handleCreate, needToUpdate, handleEdit, o
                                         setMobileErrorText(validationMessages.mobileNumber)
                                     }
                                     else {
-                                        
-                                            setMobile(e.target.value)
-                                        
+
+                                        setMobile(e.target.value)
+
                                         setMobileErrorText('')
                                     }
                                 }
@@ -164,10 +164,7 @@ function CreateEditEmployees({ create, handleCreate, needToUpdate, handleEdit, o
                                 } />}
                         </div>
                         {mobileErrorText && <p style={{ color: 'red' }}>{mobileErrorText}</p>}
-
-
                         {view ?
-
                             <>
                                 <div class="form-group">
                                     <label for="formGroupExampleInput4">Job Role</label>
@@ -195,7 +192,6 @@ function CreateEditEmployees({ create, handleCreate, needToUpdate, handleEdit, o
                                 </div>
                                 {jobRoleErrorText && <p style={{ color: 'red' }}>{jobRoleErrorText}</p>}
                             </>
-
                         }
                     </form>
                 </Modal.Body>

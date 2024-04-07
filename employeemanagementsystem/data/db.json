@@ -1,16 +1,8 @@
 {
   "users": [
     {
-      "id": "Emp1010",
-      "name": "Praba",
-      "email": "prabaidymoto@gmail.com",
-      "employeeId": "Emp1010",
-      "jobRole": "Engineer",
-      "mobile": "7845692527"
-    },
-    {
       "id": "Emp145",
-      "name": "Suresh",
+      "name": "Sureshkumar",
       "email": "suresh@gmail.com",
       "employeeId": "Emp145",
       "jobRole": "Engineer",
@@ -23,54 +15,6 @@
       "employeeId": "Emp0003",
       "jobRole": "Engineer",
       "mobile": "7845693456"
-    },
-    {
-      "id": "Emp0004",
-      "name": "Emily Brown",
-      "email": "emily.brown@example.com",
-      "employeeId": "Emp0004",
-      "jobRole": "Engineer",
-      "mobile": "7845694567"
-    },
-    {
-      "id": "Emp0005",
-      "name": "David Lee",
-      "email": "david.lee@example.com",
-      "employeeId": "Emp0005",
-      "jobRole": "Engineer",
-      "mobile": "7845695678"
-    },
-    {
-      "id": "Emp0006",
-      "name": "Sarah Garcia",
-      "email": "sarah.garcia@example.com",
-      "employeeId": "Emp0006",
-      "jobRole": "Engineer",
-      "mobile": "7845696789"
-    },
-    {
-      "id": "Emp0007",
-      "name": "Matthew Martinez",
-      "email": "matthew.martinez@example.com",
-      "employeeId": "Emp0007",
-      "jobRole": "Engineer",
-      "mobile": "7845697890"
-    },
-    {
-      "id": "Emp0008",
-      "name": "Emma Wilson",
-      "email": "emma.wilson@example.com",
-      "employeeId": "Emp0008",
-      "jobRole": "Engineer",
-      "mobile": "7845698901"
-    },
-    {
-      "id": "Emp0009",
-      "name": "Daniel Anderson",
-      "email": "daniel.anderson@example.com",
-      "employeeId": "Emp0009",
-      "jobRole": "Engineer",
-      "mobile": "7845699012"
     }
   ]
 }

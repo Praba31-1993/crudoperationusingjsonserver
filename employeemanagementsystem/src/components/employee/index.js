@@ -72,6 +72,7 @@ function Employees() {
 
     // Update Employee Api Call
     const handleEdit = async (editData) => {
+
         await axios.put(`${apiUrl}/users/${editData?.id}`, editData).then((res) => {
             if (res.status === 200) {
                 toast.success(toastMessages.updatedSuccessfully, {
@@ -79,7 +80,7 @@ function Employees() {
                 });
                 setEmployees(prevEmployees => prevEmployees.map(employee => {
                     if (employee.id === editData.id) {
-                        return editData; 
+                        return editData;
                     }
                     return employee;
                 }));
@@ -99,10 +100,11 @@ function Employees() {
                 toast.success(toastMessages.deletedSuccessfully, {
                     position: "top-right",
                 });
-                setEmployees([res.data])
+                setEmployees(prevEmployees => prevEmployees.filter(employee => employee.id !== id));
             }
-        })
-        getAllEmployeeList()
+        }).catch((error) => {
+        });
+        getAllEmployeeList(); 
     }
 
     // To get all Employees List api call
@@ -112,6 +114,7 @@ function Employees() {
         }).catch((error) => {
         })
     }
+
     return (
         <div >
             <ToastContainer />
